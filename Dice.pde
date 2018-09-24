@@ -21,7 +21,16 @@ class Die //models one single dice cube
 	{
 		myX = x;
 		myY = y;
-		myValue = 1;
+		myValue = 3;
+	}
+	void blankDie()
+	{
+		fill(255);
+		rect(myX,myY,70,70,15);
+	}
+	void centerDot()
+	{
+		ellipse(myX+35,myY+35,10,10);
 	}
 	void roll()
 	{
@@ -31,10 +40,30 @@ class Die //models one single dice cube
 	{
 		if(myValue==1)
 		{
-			fill(255);
-			rect(myX,myY,70,70,15);
+			blankDie();
 			fill(0);
-			ellipse(myX+35,myY+35,10,10);
+			centerDot();
+		}
+		if(myValue==2)
+		{
+			blankDie();
+			fill(0);
+			ellipse(myX+20,myY+20,10,10);
+			ellipse(myX+70-20,myY+70-20,10,10);
+		}
+		if(myValue==3)
+		{
+			blankDie();
+			fill(0);
+			ellipse(myX+20,myY+70-20,10,10);
+			ellipse(myX+70-20,myY+20,10,10);
+			centerDot();
+		}
+		if(myValue==4)
+		{
+			blankDie();
+			fill(0);
+			
 		}
 	}
 }
