@@ -21,7 +21,7 @@ class Die //models one single dice cube
 	{
 		myX = x;
 		myY = y;
-		myValue = 3;
+		myValue = 6;
 	}
 	void blankDie()
 	{
@@ -32,38 +32,53 @@ class Die //models one single dice cube
 	{
 		ellipse(myX+35,myY+35,10,10);
 	}
+	void fourDot()
+	{
+		ellipse(myX+20,myY+20,10,10);
+		ellipse(myX+70-20,myY+20,10,10);
+		ellipse(myX+20,myY+70-20,10,10);
+		ellipse(myX+70-20,myY+70-20,10,10);
+	}
 	void roll()
 	{
 		//your code here
 	}
 	void show()
 	{
+		blankDie();
+		fill(0);
 		if(myValue==1)
 		{
-			blankDie();
-			fill(0);
 			centerDot();
 		}
 		if(myValue==2)
 		{
-			blankDie();
-			fill(0);
 			ellipse(myX+20,myY+20,10,10);
 			ellipse(myX+70-20,myY+70-20,10,10);
 		}
 		if(myValue==3)
 		{
-			blankDie();
-			fill(0);
 			ellipse(myX+20,myY+70-20,10,10);
 			ellipse(myX+70-20,myY+20,10,10);
 			centerDot();
 		}
 		if(myValue==4)
 		{
-			blankDie();
-			fill(0);
-			
+			fourDot();
+		}
+		if(myValue==5)
+		{
+			fourDot();
+			centerDot();
+		}
+		if(myValue==6)
+		{
+			ellipse(myX+20,myY+20,10,10);
+			ellipse(myX+70-20,myY+20,10,10);
+			ellipse(myX+20,myY+35,10,10);
+			ellipse(myX+70-20,myY+35,10,10);
+			ellipse(myX+20,myY+50,10,10);
+			ellipse(myX+70-20,myY+50,10,10);
 		}
 	}
 }
